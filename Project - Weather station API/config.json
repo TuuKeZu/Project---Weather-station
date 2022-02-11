@@ -1,0 +1,5 @@
+{
+    "port": 3000,
+    "rate-limit": 0,
+    "max-connections": 10
+}

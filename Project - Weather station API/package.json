@@ -1,0 +1,20 @@
+{
+  "name": "project-weather-station-api",
+  "version": "1.0.0",
+  "description": "Iot school project - reading data from Raspberry 4 and displaying that data on the internet.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "project-weather-station"
+  },
+  "author": "Tuukka Moilanen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "joi": "^17.6.0",
+    "mysql": "^2.18.1"
+  }
+}

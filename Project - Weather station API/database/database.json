@@ -1,0 +1,8 @@
+{
+    "authentication_token": "test",
+    "user": "root",
+    "password": "",
+    "database": "weather_api",
+    "host": "localhost",
+    "port": 3306
+}
