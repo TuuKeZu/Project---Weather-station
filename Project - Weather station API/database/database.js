@@ -41,6 +41,38 @@ module.exports =
                 return resolve(results);
             });
         });
+    },
+
+    // Updates the current temperature
+    setCurrent: (temperature) => {
+        return new Promise((resolve, reject) => {
+            const query_update = 'UPDATE current SET temperature = ?, last_modified = NOW()';
+            pool.query(query_update, [temperature], (err, results) => {
+
+                if(err){
+                    return reject(err);
+                }
+
+                return resolve(results);
+
+            });
+        });
+    },
+
+    // Saves the temperature to hourly history
+    addToHourlyHistory: (temperature) => {
+        return new Promise((resolve, reject) => {
+            const query_update = 'INSERT INTO hourly_history (temperature, date) VALUES (?, NOW())';
+            pool.query(query_update, [temperature], (err, results) => {
+
+                if(err){
+                    return reject(err);
+                }
+
+                return resolve(results);
+
+            });
+        });
     }
 }
 
