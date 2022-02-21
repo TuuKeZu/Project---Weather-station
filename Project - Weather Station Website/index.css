@@ -1,0 +1,199 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: 'light';
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*=== Tuukka Moilanen 2020===*/
+:root{
+    --faded-black: rgba(0, 0, 0, 0.116);
+}
+@font-face {
+    font-family: 'extra-light';
+    src: url(./Assets/fonts/Inconsolata-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: 'light';
+    src: url(./Assets/fonts/Inconsolata-Light.ttf);
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url(./Assets/fonts/Inconsolata-Bold.ttf);
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-image: url(./Assets/img/bg.jpg);
+
+    display: flex;
+    align-items: center;
+}
+
+.side-bar{
+    height: 100%;
+    width: 30%;
+    max-width: 300px;
+
+    background-color: var(--faded-black);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.side-bar h1{
+    position: absolute;
+    font-size: 40px;
+    text-align: center;
+    margin: 20px;
+    top: 50px;
+    color: white;
+}
+
+.side-bar h3{
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+    top: 150px;
+    color: rgba(255, 255, 255, 0.37);  
+}
+
+.side-bar h4{
+    font-family: 'bold';
+    font-size: 70px;
+    color: white;
+}
+
+.side-bar h2{
+    width: 80%;
+    margin-left: 50px;
+    padding-left: 20px;
+    border-left: solid 2px white;
+    font-family: 'light';
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.52);
+}
+
+.side-bar h6{
+    font-style: italic;
+    width: 80%;
+    margin-left: 50px;
+    padding-left: 20px;
+    border-left: solid 2px white;
+    font-family: 'extra-light';
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.438);
+}
+
+.disclaimer{
+    display: none;
+}
+
+@media screen and (max-width: 1000px){
+    .container{
+        justify-content: center;
+    }
+    .side-bar{
+        width: 70%;
+        min-width: auto;
+        max-width: none;
+    }
+
+    .side-bar h2{
+        width: 100%;
+        margin-left: 0px;
+        padding-left: 0px;
+        text-align: center;
+        border-left: none;
+    }
+
+    .side-bar h6{
+        width: 100%;
+        margin-left: 0px;
+        padding-left: 0px;
+        border-left: none;;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        justify-content: center;
+    }
+    .side-bar{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 250px){
+    .container{
+        display: none !important;
+    }
+
+    .disclaimer{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        font-family: 'extra-light';
+    }
+}
