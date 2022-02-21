@@ -3,7 +3,6 @@ const request = require('request');
 const CONFIG = require('./config.json');
 const AUTHENTICATION = require('./authentication.json');
 const Moment = require('moment');
-const { Console } = require('console');
 
 const RECORDS = [];
 let ONLINE = true;
