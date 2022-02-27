@@ -1,5 +1,5 @@
 {
-    "interval": 10000,
+    "interval": 2000,
     "data-path": "./resources/test-values.txt",
     "auto-save-path": "./auto_saving/auto-save.txt",
     "api-path": "http://localhost:3000/api/set/"

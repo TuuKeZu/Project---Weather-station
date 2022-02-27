@@ -19,7 +19,6 @@ const Initialize = () => {
             const data = await readDataFromTemperatureSensor();
             const hourly = appendHourlyData( parseData(data) );
 
-
             
             if(ONLINE)
             {
@@ -29,7 +28,7 @@ const Initialize = () => {
     
                     const uploaded = await uploadDataToServers(parseData(data), 'CURRENT');
     
-                    console.log("Successfully updated the current temperature")
+                    console.log(`Successfully updated the current temperature. (${RECORDS.length})`);
     
                 } catch(e) {
                     connectionError(e);
@@ -37,13 +36,12 @@ const Initialize = () => {
                 }
 
                 if(hourly != null){
-                    
+
                     try{
-        
+
                         const uploaded = await uploadDataToServers(parseData(data), 'HOUR');
-        
-                        console.log("Successfully saved last hour's data to database.")
-        
+                        console.log(`Successfully saved last hour's data to database. (${new Date()})`)
+                        
                     } catch(e) {
                         connectionError(e);
                         return;
@@ -56,6 +54,7 @@ const Initialize = () => {
             {
                 if(hourly != null){
                     saveDataLocally(hourly);
+                    console.log(`Successfully saved last hour's data locally. (${new Date()})`);
                 }
             }
 
@@ -64,9 +63,9 @@ const Initialize = () => {
         {
             throw(e);
         }
-    
-        
-    
+	
+
+
     }, CONFIG.interval);
 
 }
@@ -114,7 +113,7 @@ const uploadDataToServers = (temperature = String, type = String) => {
 
             if(err){
                 
-                return reject(err.errno);
+                return reject(err);
             }
 
             if(res.statusCode != 200){
@@ -132,7 +131,7 @@ const uploadDataToServers = (temperature = String, type = String) => {
 const appendHourlyData = (data) => {
     RECORDS.push(data);
 
-    const hourly = RECORDS.length == 60;
+    const hourly = RECORDS.length == 10;
 
     if(hourly){
         let average_temp = 0;
