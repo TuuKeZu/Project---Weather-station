@@ -7,6 +7,7 @@
     <title>Weather Station - Kirkkonummi</title>
 
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
@@ -19,7 +20,12 @@
             <h2 id="TEMP-RAW">[-]°C</h2>
             <h2>Last updated:</h2>
             <h6 id="LAST-UPDATED">21/02/2020 13:51:00</h6>
+            <button id="OPEN">></button>
         </div>
+    </div>
+    <div class="chart-container" id="GRAPH-CONTAINER">
+        <canvas id="CHART"></canvas>
+        <button id="RETURN"><h1>></h1></button>
     </div>
 </body>
 </html>

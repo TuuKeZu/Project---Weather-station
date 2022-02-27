@@ -140,8 +140,74 @@ table {
     color: rgba(255, 255, 255, 0.438);
 }
 
+.side-bar button{
+    position: absolute;
+    align-self: flex-end;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    font-family: 'bold';
+
+    transition: color .3s;
+}
+
+.side-bar button:hover{
+    color: aqua;
+}
+
 .disclaimer{
     display: none;
+}
+
+.chart-container{
+    display: none;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--faded-black);
+    backdrop-filter: blur(3px);
+}
+
+.chart-container button{
+    position: absolute;
+    transform: rotate(180deg);
+    left: 10px;
+    border: none;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--faded-black);
+    transition: color .3s;
+}
+
+.chart-container button:hover{
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+.chart-container button h1{
+    font-size: 40px;
+    padding: 5px;
+    color: white;
+}
+
+
+#CHART{
+    width: 90% !important;
+    margin-left: 2%;
 }
 
 @media screen and (max-width: 1000px){
