@@ -113,7 +113,7 @@ const drawGraph = async (data = []) => {
 }
 
 const getCurrent = async () => {
-    const url = 'http://45.32.234.225:3000/api/get/now';
+    const url = 'https://lastrun.app:3000/api/get/now';
 
     fetch(url)
     .then(response => {
@@ -128,7 +128,7 @@ const getCurrent = async () => {
 }
 
 const getChartData = async () => {
-    const url = 'http://45.32.234.225:3000/api/get/hours/48';
+    const url = 'https://lastrun.app:3000/api/get/hours/48';
 
     fetch(url)
     .then(response => {
