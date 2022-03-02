@@ -1,5 +1,8 @@
 {
     "port": 3000,
     "rate-limit": 0,
-    "max-connections": 10
+    "max-connections": 10,
+    "private-key-path": "/etc/letsencrypt/live/lastrun.app/privkey.pem",
+    "certificate-path": "/etc/letsencrypt/live/lastrun.app/cert.pem",
+    "certificate-authority-path": "/etc/letsencrypt/live/lastrun.app/chain.pem"
 }
